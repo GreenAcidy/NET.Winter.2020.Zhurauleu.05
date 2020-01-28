@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ConverterMethods</name>
+    </assembly>
+    <members>
+        <member name="T:ConverterIEEE754.ConvertHelper">
+            <summary >
+            Struct DoubleConverterToLong that conver double in long.
+            </summary >
+        </member>
+        <member name="M:ConverterIEEE754.ConvertHelper.SetNumber(System.Double)">
+            <summary >
+            Method of getting number.
+            </summary >
+            <param  name = " number " > number for convirting. </param >
+        </member>
+        <member name="M:ConverterIEEE754.ConvertHelper.GetNumber">
+            <summary >
+            Method for returning number in long type.
+            </summary >
+            <returns>number in long type.  </returns>
+        </member>
+        <member name="T:ConverterIEEE754.DoubleConverter">
+            <summary >
+            Struct DoubleConverterToLong that conver double in long.
+            </summary >
+        </member>
+        <member name="M:ConverterIEEE754.DoubleConverter.ConvertToIEEE754(System.Double)">
+            <summary >
+            Algorith for converting double in IEEE754 using long.
+            </summary >
+            <param  name = " number " > number for convirting. </param >
+            <returns>Format IEEE754.  </returns>
+        </member>
+    </members>
+</doc>
