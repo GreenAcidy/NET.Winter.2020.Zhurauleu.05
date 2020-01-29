@@ -1,5 +1,5 @@
 using NUnit.Framework;
-using static ConverterIEEE754.DoubleConverter;
+using static ConverterMethods.DoubleConverter;
 
 namespace ConverterMethods.Test
 {

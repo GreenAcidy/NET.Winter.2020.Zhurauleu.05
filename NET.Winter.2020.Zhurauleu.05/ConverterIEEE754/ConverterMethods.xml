@@ -4,29 +4,38 @@
         <name>ConverterMethods</name>
     </assembly>
     <members>
-        <member name="T:ConverterIEEE754.ConvertHelper">
+        <member name="T:ConverterMethods.AppSettings">
+            <summary >
+            Class AppSettings. Contains two fileds which will be used for constants.
+            </summary >
+        </member>
+        <member name="P:ConverterMethods.AppSettings.BytesInLong">
+            <summary >
+            Gets or sets field BytesInLong.
+            </summary >
+            <value>
+            Field Epsilon represent count of bytes in long type.
+            </value>
+        </member>
+        <member name="P:ConverterMethods.AppSettings.BitsInByte">
+            <summary >
+            Gets or sets field BitsInByte.
+            </summary >
+            <value>
+            Field BitsIiByte represent number of of bits in byteб giving the ability to compute with any number of bytes.
+            </value>
+        </member>
+        <member name="T:ConverterMethods.ConvertHelper">
             <summary >
             Struct DoubleConverterToLong that conver double in long.
             </summary >
         </member>
-        <member name="M:ConverterIEEE754.ConvertHelper.SetNumber(System.Double)">
-            <summary >
-            Method of getting number.
-            </summary >
-            <param  name = " number " > number for convirting. </param >
-        </member>
-        <member name="M:ConverterIEEE754.ConvertHelper.GetNumber">
-            <summary >
-            Method for returning number in long type.
-            </summary >
-            <returns>number in long type.  </returns>
-        </member>
-        <member name="T:ConverterIEEE754.DoubleConverter">
+        <member name="T:ConverterMethods.DoubleConverter">
             <summary >
             Struct DoubleConverterToLong that conver double in long.
             </summary >
         </member>
-        <member name="M:ConverterIEEE754.DoubleConverter.ConvertToIEEE754(System.Double)">
+        <member name="M:ConverterMethods.DoubleConverter.ConvertToIEEE754(System.Double)">
             <summary >
             Algorith for converting double in IEEE754 using long.
             </summary >

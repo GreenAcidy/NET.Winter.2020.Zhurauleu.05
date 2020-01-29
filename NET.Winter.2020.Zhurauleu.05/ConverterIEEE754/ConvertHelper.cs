@@ -1,36 +1,34 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ConverterIEEE754
+namespace ConverterMethods
 {
     /// <summary >
     /// Struct DoubleConverterToLong that conver double in long.
     /// </summary >
     [StructLayout(LayoutKind.Explicit)]
 
-    public struct ConvertHelper
+    internal struct ConvertHelper
     {
         [FieldOffset(0)]
-        private readonly long numberLong;
+        private long numberLong;
         [FieldOffset(0)]
         private double numberDouble;
 
-        /// <summary >
-        /// Method of getting number.
-        /// </summary >
-        /// <param  name = " number " > number for convirting. </param >
-        public void SetNumber(double number)
+        public double NumberDouble
         {
-            this.numberDouble = number;
+            set
+            {
+                this.numberDouble = value;
+            }
         }
 
-        /// <summary >
-        /// Method for returning number in long type.
-        /// </summary >
-        /// <returns>number in long type.  </returns>
-        public long GetNumber()
+        public long NumberLong
         {
-            return this.numberLong;
+            get
+            {
+                return this.numberLong;
+            }
         }
     }
 
@@ -39,6 +37,17 @@ namespace ConverterIEEE754
     /// </summary >
     public static class DoubleConverter
     {
+        public static readonly AppSettings AppSettings;
+
+        static DoubleConverter()
+        {
+            AppSettings = new AppSettings
+            {
+                BitsInByte = 8,
+                BytesInLong = 8,
+            };
+        }
+
         /// <summary >
         /// Algorith for converting double in IEEE754 using long.
         /// </summary >
@@ -47,27 +56,18 @@ namespace ConverterIEEE754
         public static string ConvertToIEEE754(double number)
         {
             ConvertHelper converter = default;
-            converter.SetNumber(number);
-            long item = converter.GetNumber();
+            converter.NumberDouble = number;
+            long item = converter.NumberLong;
             long mask = 1;
-            char[] bit = new char[64];
-            for (int i = 0; i < 64; i++)
+            char[] bit = new char[AppSettings.BitsInByte * AppSettings.BytesInLong];
+            for (int i = 0; i < AppSettings.BitsInByte * AppSettings.BytesInLong; i++)
             {
-                if ((mask & item) != 0)
-                {
-                    bit[i] = '1';
-                }
-                else
-                {
-                    bit[i] = '0';
-                }
-
+                bit[i] = (mask & item) != 0 ? '1' : '0';
                 mask <<= 1;
             }
 
             Array.Reverse(bit);
-            string result = new string(bit);
-            return result;
+            return new string(bit);
         }
     }
 }
