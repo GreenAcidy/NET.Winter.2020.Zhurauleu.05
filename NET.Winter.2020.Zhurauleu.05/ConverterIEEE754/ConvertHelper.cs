@@ -37,17 +37,6 @@ namespace ConverterMethods
     /// </summary >
     public static class DoubleConverter
     {
-        public static readonly AppSettings AppSettings;
-
-        static DoubleConverter()
-        {
-            AppSettings = new AppSettings
-            {
-                BitsInByte = 8,
-                BytesInLong = 8,
-            };
-        }
-
         /// <summary >
         /// Algorith for converting double in IEEE754 using long.
         /// </summary >
@@ -59,14 +48,13 @@ namespace ConverterMethods
             converter.NumberDouble = number;
             long item = converter.NumberLong;
             long mask = 1;
-            char[] bit = new char[AppSettings.BitsInByte * AppSettings.BytesInLong];
-            for (int i = 0; i < AppSettings.BitsInByte * AppSettings.BytesInLong; i++)
+            char[] bit = new char[sizeof(double) * 8];
+            for (int i = bit.Length - 1; i >= 0; i--)
             {
                 bit[i] = (mask & item) != 0 ? '1' : '0';
                 mask <<= 1;
             }
 
-            Array.Reverse(bit);
             return new string(bit);
         }
     }

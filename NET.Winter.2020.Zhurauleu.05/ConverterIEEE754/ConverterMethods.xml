@@ -4,27 +4,6 @@
         <name>ConverterMethods</name>
     </assembly>
     <members>
-        <member name="T:ConverterMethods.AppSettings">
-            <summary >
-            Class AppSettings. Contains two fileds which will be used for constants.
-            </summary >
-        </member>
-        <member name="P:ConverterMethods.AppSettings.BytesInLong">
-            <summary >
-            Gets or sets field BytesInLong.
-            </summary >
-            <value>
-            Field Epsilon represent count of bytes in long type.
-            </value>
-        </member>
-        <member name="P:ConverterMethods.AppSettings.BitsInByte">
-            <summary >
-            Gets or sets field BitsInByte.
-            </summary >
-            <value>
-            Field BitsIiByte represent number of of bits in byteб giving the ability to compute with any number of bytes.
-            </value>
-        </member>
         <member name="T:ConverterMethods.ConvertHelper">
             <summary >
             Struct DoubleConverterToLong that conver double in long.

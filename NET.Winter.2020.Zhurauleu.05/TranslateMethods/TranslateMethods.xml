@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TranslateMethods</name>
+    </assembly>
+    <members>
+        <member name="T:TranslateMethods.DoubleTransformer">
+            <summary >
+            Class TransformToWords converts any real number (System.Double) into its "verbal format".
+            </summary >
+        </member>
+        <member name="M:TranslateMethods.DoubleTransformer.TransformToWords(System.Double,TranslateMethods.IDictionaryProvider)">
+            <summary >
+            Algorith for converting double in its "verbal format".
+            </summary >
+            <param  name = " number " > number for convirting. </param >
+            <param  name = " provider " > interface for working with dictionaries. </param >
+            <returns>Verbal format of number.  </returns>
+        </member>
+        <member name="T:TranslateMethods.EnglishDictionary">
+            <summary >
+            Class EnglishDictionary contains two dictionaries for translating number (System.Double) into its english "verbal format".
+            </summary >
+        </member>
+        <member name="P:TranslateMethods.EnglishDictionary.Keys">
+            <summary >
+            <value>
+            Gets dictionary Keys contains digits and signs and its "verbal format" for translating.
+            </value>
+            </summary >
+            <value>
+            Gets "verbal format" for digits and signs.
+            </value>
+        </member>
+        <member name="P:TranslateMethods.EnglishDictionary.SpecialKeys">
+            <summary >
+            Gets dictionary SpecialKeys contains special numbers and its "verbal format" for translating.
+            </summary >
+            <value>
+            Gets "verbal format" for special word .
+            </value>
+        </member>
+        <member name="T:TranslateMethods.IDictionaryProvider">
+            <summary>
+            Interface IDictionaryProvider sets the behavior for dictionaries.
+            </summary>
+        </member>
+        <member name="P:TranslateMethods.IDictionaryProvider.Keys">
+            <summary>
+            Gets dictionary Keys.
+            </summary>
+            <value>
+            Method get.
+            </value>
+        </member>
+        <member name="P:TranslateMethods.IDictionaryProvider.SpecialKeys">
+            <summary>
+            Gets dictionary SpecialKeys.
+            </summary>
+            <value>
+            Method get.
+            </value>
+        </member>
+    </members>
+</doc>
